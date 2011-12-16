@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pyflakes3 "$1"
+pep8 --repeat "$1"
+true
