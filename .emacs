@@ -10,7 +10,7 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 
-(setenv "PATH" "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin")
+;;(setenv "PATH" "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH")
 (delete-selection-mode t)
 
 (custom-set-variables
@@ -66,4 +66,11 @@
 
 (setq compilation-scroll-output t)
 
+(defun latex-pdf-reload ()
+  "Use compile to generate pdf using latex and"
+  "reload the pdf file on background"
+  (interactive)
+  (compile (concatenate 'string "pdflatex " (buffer-name) "; open " (substring (buffer-name) 0 -4) ".pdf; open -a Aquamacs.app")))
+(global-set-key "\C-t" 'latex-pdf-reload)
 (setq js-indent-level 2)
+(require 'tex-site)
