@@ -112,3 +112,9 @@
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "M-h") 'backward-kill-word)
 (global-set-key (kbd "C-\\") 'kill-region)
+
+; allow to use M-up M-down for scrolling
+(define-key input-decode-map "\e\eOA" [(meta up)])
+(define-key input-decode-map "\e\eOB" [(meta down)])
+(global-set-key [(meta down)] 'scroll-up)
+(global-set-key [(meta up)] 'scroll-down)
