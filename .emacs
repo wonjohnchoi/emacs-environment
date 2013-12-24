@@ -13,13 +13,8 @@
 ;; (setenv "PATH" "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH")
 (delete-selection-mode t)
 
-;;(custom-set-variables
-; '(inhibit-startup-screen t)
-;'(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120)))
-;)
-;(setq-default indent-tabs-mode nil)
-;(setq-default tab-width 4)
-(setq js-indent-level 2)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
 (add-hook 'c-mode 'set-newline-and-indent)
@@ -110,3 +105,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+; copied from my cs164 .emacs file
+(global-linum-mode 1)
+(global-set-key (kbd "M-;") 'goto-line)
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "M-h") 'backward-kill-word)
+(global-set-key (kbd "C-\\") 'kill-region)
