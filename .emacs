@@ -118,3 +118,9 @@
 (define-key input-decode-map "\e\eOB" [(meta down)])
 (global-set-key [(meta down)] 'scroll-up)
 (global-set-key [(meta up)] 'scroll-down)
+
+
+; octave mode
+(autoload 'octave-mode "octave-mod" nil t)
+(setq auto-mode-alist
+      (cons '("\\.m$" . octave-mode) auto-mode-alist))
