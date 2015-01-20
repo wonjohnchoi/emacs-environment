@@ -27,8 +27,6 @@
 ;; ***************
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/")
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/themes/")
-(add-to-list 'load-path "~/.emacs.d/auctex-11.86-e23.3-msw/")
-(add-to-list 'load-path "~/.emacs.d/auctex-11.86-e23.3-msw/site-lisp/")
 
 (require 'color-theme)
 (color-theme-initialize)
@@ -68,26 +66,6 @@
   (compile (concat "python3 -m doctest " (buffer-name))))
 (global-set-key "\C-c\[" 'python3-doctest)
 
-;(setq compilation-scroll-output t)
-(if (eq system-type 'windows-nt)
-    ;; windows
-    (defun latex-pdf-reload ()
-      "Use compile to generate pdf using latex and"
-      "reload the pdf file on background"
-      (interactive)
-      ;(compile (concatenate 'string "pdflatex " (buffer-name) "& start "" \"C:\\Program Files (x86)\\Adobe\\Reader 11.0\\Reader\\AcroRd32.exe\" " (substring (buffer-name) 0 -4) ".pdf")))
-      (compile (concatenate 'string "pdflatex " (buffer-name))))
-      ;"& start "" \"C:\Program Files (x86)\\Evince-2.32.0.145\\bin\\evince.exe\" " (substring (buffer-name) 0 -4) ".pdf")))
-      
-  ;; something else (mac os, linux)
-  (defun latex-pdf-reload ()
-    "Use compile to generate pdf using latex and"
-    "reload the pdf file on background"
-    (interactive)
-    (compile (concatenate 'string "pdflatex " (buffer-name) "; open " (substring (buffer-name) 0 -4) ".pdf; open -a Aquamacs.app")))
-)
-(global-set-key "\C-t" 'latex-pdf-reload)
-(require 'tex-site)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -120,7 +98,3 @@
 (global-set-key [(meta up)] 'scroll-down)
 
 
-; octave mode
-(autoload 'octave-mode "octave-mod" nil t)
-(setq auto-mode-alist
-      (cons '("\\.m$" . octave-mode) auto-mode-alist))
