@@ -82,7 +82,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(linum ((t (:background "#282a2e" :foreground "blue")))))
 
 ; copied from my cs164 .emacs file
 (global-linum-mode 1)
@@ -97,4 +97,5 @@
 (global-set-key [(meta down)] 'scroll-up)
 (global-set-key [(meta up)] 'scroll-down)
 
+(electric-pair-mode 1)
 
