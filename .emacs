@@ -100,3 +100,7 @@
 (electric-pair-mode 1)
 (xterm-mouse-mode 1)
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
