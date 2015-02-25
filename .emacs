@@ -98,4 +98,5 @@
 (global-set-key [(meta up)] 'scroll-down)
 
 (electric-pair-mode 1)
-
+(xterm-mouse-mode 1)
+(define-key global-map (kbd "RET") 'newline-and-indent)
