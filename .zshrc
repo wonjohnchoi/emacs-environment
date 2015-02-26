@@ -80,3 +80,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/git/competitions/.zsh ] && source ~/git/competitions/.zsh
+
+export PATH="/home/wonjohnchoi/.cask/bin:$PATH"
